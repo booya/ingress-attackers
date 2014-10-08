@@ -1,5 +1,16 @@
+ingress-attackers
+====
 A python script to parse ingress emails using the gmail API.  The following steps are required for this to work:
 
+# Installation
+## Configure python environment
+### Clone the git repository:
+    `user@host:~/work$ git clone git@github.com:booya/ingress-attackers.git`
+
+### Create virtualenv
+    `user@host:~/work$ virtualenv ingress-attackers`
+
+## Configure Gmail API
 1) Acces the Google Developers Console at https://console.developers.google.com/.
 2) Click on "Create Project", give your project a name, and click 'Create'.
 3) Once the project has been created, navigate to APIs & Auth -> APIs.  Enable the Gmail API.  You may disable
