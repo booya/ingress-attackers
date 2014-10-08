@@ -21,19 +21,19 @@ OAUTH_SCOPE = 'https://www.googleapis.com/auth/gmail.readonly'
 STORAGE = Storage('gmail.storage')
 
 # Start the OAuth flow to retrieve credentials
-flow = flow_from_clientsecrets(CLIENT_SECRET_FILE, scope=OAUTH_SCOPE)
-http = httplib2.Http()
+#flow = flow_from_clientsecrets(CLIENT_SECRET_FILE, scope=OAUTH_SCOPE)
+#http = httplib2.Http()
 
 # Try to retrieve credentials from storage or run the flow to generate them
-credentials = STORAGE.get()
-if credentials is None or credentials.invalid:
-      credentials = run(flow, STORAGE, http=http)
+#credentials = STORAGE.get()
+#if credentials is None or credentials.invalid:
+#      credentials = run(flow, STORAGE, http=http)
 
 # Authorize the httplib2.Http object with our credentials
-http = credentials.authorize(http)
-
+#http = credentials.authorize(http)
+#
 # Build the Gmail service from discovery
-gmail_service = build('gmail', 'v1', http=http)
+#gmail_service = build('gmail', 'v1', http=http)
 
 agents = []
 messageCount = 0
@@ -58,7 +58,7 @@ def gmail():
     return build('gmail', 'v1', http=http)
 
 def getLabelId(label):
-    labels = gmail_service.users().labels().list(userId='me').execute()
+    labels = gmail.users().labels().list(userId='me').execute()
     for l in labels['labels']:
         if l['name'] == label:
             return l['id']
@@ -74,11 +74,11 @@ def rateLimit(request):
 
 @rateLimit
 def getMessagesByLabel(label, token):
-    return gmail_service.users().messages().list(userId='me', labelIds=label, pageToken=token).execute()
+    return gmail.users().messages().list(userId='me', labelIds=label, pageToken=token).execute()
 
 @rateLimit
 def getMessageSubject(id):
-    msg = gmail_service.users().messages().get(
+    msg = gmail.users().messages().get(
                 userId='me',
                 id=id,
                 format='metadata',
@@ -90,6 +90,7 @@ def getMessageSubject(id):
     except:
         raise
 
+gmail = gmail()
 labelid = getLabelId(label)
 
 while messageCount < 500:
