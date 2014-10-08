@@ -80,8 +80,8 @@ def getMessageSubject(id):
 gmail = gmail()
 labelid = getLabelId(label)
 
-while messageCount < 500:
-#while True:
+#while messageCount < 500:
+while True:
     # this can throw httpError also!
     messages = getMessagesByLabel(labelid, token)
     if messages['messages'] is not None:
