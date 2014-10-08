@@ -20,25 +20,11 @@ OAUTH_SCOPE = 'https://www.googleapis.com/auth/gmail.readonly'
 # Location of the credentials storage file
 STORAGE = Storage('gmail.storage')
 
-# Start the OAuth flow to retrieve credentials
-#flow = flow_from_clientsecrets(CLIENT_SECRET_FILE, scope=OAUTH_SCOPE)
-#http = httplib2.Http()
-
-# Try to retrieve credentials from storage or run the flow to generate them
-#credentials = STORAGE.get()
-#if credentials is None or credentials.invalid:
-#      credentials = run(flow, STORAGE, http=http)
-
-# Authorize the httplib2.Http object with our credentials
-#http = credentials.authorize(http)
-#
-# Build the Gmail service from discovery
-#gmail_service = build('gmail', 'v1', http=http)
+label = 'ingress'
 
 agents = []
 messageCount = 0
 unrelated = 0
-label = 'ingress'
 token = ''
 
 def gmail():
@@ -71,6 +57,7 @@ def rateLimit(request):
         except httpError:
             print "httpError happened, sleeping {}".format(i+2)
             sleep(i*2)
+        i += 1
 
 @rateLimit
 def getMessagesByLabel(label, token):
