@@ -12,7 +12,7 @@ from oauth2client.tools import run
 from collections import Counter
 
 # Path to the client_secret.json file downloaded from the Developer Console
-CLIENT_SECRET_FILE = '/home/incognitus/work/gmail-api/client_secret_845618662838-slo1m9it4b2enpk0o65c64ingd9mfjqh.apps.googleusercontent.com.json'
+CLIENT_SECRET_FILE = 'client_secret.json'
 
 # Check https://developers.google.com/gmail/api/auth/scopes for all available scopes
 OAUTH_SCOPE = 'https://www.googleapis.com/auth/gmail.readonly'
