@@ -1,0 +1,8 @@
+apiclient==1.0.2
+argparse==1.2.1
+distribute==0.6.24
+google-api-python-client==1.2
+httplib2==0.9
+python-gflags==2.0
+urllib3==1.9.1
+wsgiref==0.1.2
