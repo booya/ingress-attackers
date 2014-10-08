@@ -4,11 +4,11 @@ A python script to parse ingress emails using the gmail API.
 
 # Installation
 1. Configure python environment
---1 Clone the git repository:
+--1. Clone the git repository:
 
 ```user@host:~/work$ git clone git@github.com:booya/ingress-attackers.git```
 
---1 Create virtualenv
+--1. Create virtualenv
 
 ```user@host:~/work$ virtualenv ingress-attackers```
 
