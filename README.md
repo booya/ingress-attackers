@@ -12,8 +12,8 @@ A python script to parse ingress emails using the gmail API.
 ```user@host:~/work$ virtualenv ingress-attackers```
   1. Activate virtualenv
 
-```user@host:~/work$ cd ingress-attackers
-   user@host:~/work/ingress-attackers$ . bin/activate```
+```user@host:~/work$ cd ingress-attackers```
+```user@host:~/work/ingress-attackers$ . bin/activate```
   1. install dependencies
 
 ```user@host:~/work/ingress-attackers$ pip install -r requirements.txt
