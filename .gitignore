@@ -1,0 +1,8 @@
+*.swp
+*.pyc
+bin/*
+include/*
+lib/*
+local/*
+gmail.storage
+client_secret.json
