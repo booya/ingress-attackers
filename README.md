@@ -1,13 +1,15 @@
 ingress-attackers
 ====
-A python script to parse ingress emails using the gmail API.  The following steps are required for this to work:
+A python script to parse ingress emails using the gmail API.
 
 # Installation
-## Configure python environment
-1. Clone the git repository:
+1. Configure python environment
+--1 Clone the git repository:
+
 ```user@host:~/work$ git clone git@github.com:booya/ingress-attackers.git```
 
-1. Create virtualenv
+--1 Create virtualenv
+
 ```user@host:~/work$ virtualenv ingress-attackers```
 
 ## Configure Gmail API
