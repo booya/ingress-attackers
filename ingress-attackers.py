@@ -80,8 +80,8 @@ def getMessageSubject(id):
 gmail = gmail()
 labelid = getLabelId(label)
 
-#while messageCount < 500:
-while True:
+while messageCount < 500:
+#while True:
     # this can throw httpError also!
     messages = getMessagesByLabel(labelid, token)
     if messages['messages'] is not None:
@@ -122,7 +122,9 @@ while True:
 
 print ("{} Messages, {} Unrelated.".format(messageCount, unrelated))
 count = Counter(agents)
+place = 1
 n = 100
 print("Top {0} destructive agents:".format(n))
 for word, count in count.most_common(n):
-    print("{0}: {1}".format(word, count))
+    print("{0}. {1}: {2}".format(place, word, count))
+    place += 1
